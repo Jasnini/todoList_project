@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+        <link href="./todoStyle.css" rel="stylesheet" ></link>  
+    </head>
+
+    <body>
+        <div><p id='title'>TODOS</p></div>
+
+        <div id='todoList'>
+            <nav id='head'>
+                <input id='addbox' v-model='thing' v-on:keyup.enter='addThing()' placeholder="What you want to do?"/><button  id="addbutton" v-on:click="addThing()">addThing</button>
+            </nav>
+            <div id="main">
+                <componnet is='items-component' 
+                        v-for="(item,index) in showThings"
+                        v-bind:item="item.content"
+                        :key='item.id'
+                        :classt=' item.done===0 ? "uncomplete":"complete" '
+                        :state=' item.done===0 ? false:true'
+                        v-on:del-thing="deletThing(item.id)"
+                        v-on:state-change="stateChange(item)"
+                        >
+                </componnet>
+            </div>
+            <nav id="bottom">
+                <!-- <div> -->
+                    <input name='listType' type='radio' checked id='all' v-on:click="showWhat('all')"/>
+                    <label for="all" >All</label>
+                <!-- </div> -->
+                <!-- <div> -->
+                    <input name='listType' type='radio' id='complete' v-on:click="showWhat('complete')"/>
+                    <label for="complete">Done</label>
+                <!-- </div> -->
+                <!-- <div> -->
+                    <input name='listType' type='radio' id='uncomplete' v-on:click="showWhat('uncomplete')"/>
+                    <label for="uncomplete">Undone</label>
+                <!-- </div> -->
+                
+                <!-- <button id='all' v-on:click="showWhat('all')">All</button>
+                <button id='complete' v-on:click="showWhat('complete')">Done</button>
+                <button id='uncomplete' v-on:click="showWhat('uncomplete')">Undone</button> -->
+                <button id='dels' :disabled= "dis" v-on:click="clearDone()"> Clear Done </button>
+            </nav>
+        </div>  
+
+        <script src="./todoList.js"></script>
+    </body>
+</html>
