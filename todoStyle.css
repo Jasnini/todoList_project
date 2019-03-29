@@ -42,6 +42,7 @@ body{
 }
 #bottom{
     padding-left: 33%;
+    height: 1.5rem;
 }
 
 #addbox{
@@ -57,17 +58,31 @@ body{
     display: inline-block;
     height: 3.316rem;
     font-size: 1rem;
-
+    cursor: pointer;
+    border-radius: 4px;
+    border:0.1rem solid rgb(204, 203, 203);
+    outline: none;
+    
 }
+#addbutton:active {
+    border-color: rgb(163, 163, 163);
+}
+
+#addbutton:hover{
+    background-color: rgb(226,224, 224);
+    box-shadow: 0.2rem 0.2rem 0.2rem 0 rgba(114, 114, 114)
+}
+
+
 
 #container{
     display: flex;
-    
     /* border-left: 1px solid rgb(216, 214, 214);
     border-right: 1px solid rgb(216, 214, 214); */
     border-bottom: 1px solid rgb(216, 214, 214);
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    height: 1.8rem;
 }
 /* #main #container:last-of-type{
     border-bottom:1px solid rgb(216, 214, 214);
@@ -83,7 +98,7 @@ body{
 }
 #item{
     width: 100%;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
     word-wrap:break-word;
     white-space: pre-wrap;
     
@@ -93,10 +108,9 @@ body{
     font-size: 1.6rem;
     background: transparent;
     border: none;
-    color: rgb(211, 208, 208);
-    margin-right: 0.5rem;
-    margin-top: 0rem; 
-    padding-top: 0rem;
+    color: rgb(194, 190, 190);
+    /* margin-top: 0rem; 
+    padding-top: 0rem; */
     /* padding-bottom: 0.5rem; */
     visibility: hidden;
     outline: none;
@@ -111,11 +125,18 @@ body{
 
 #dels{
     height: 2rem;
-    font-size: 0.8rem;
-    width: 5.7rem;
+    font-size: 1rem;
+    color: rgb(194, 190, 190);
     margin-right: 0.3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    outline: none;
 }
-
+#dels:hover{
+    color: rgb(122, 32, 103);
+}
 
 #dels{
     margin-left: 4rem;

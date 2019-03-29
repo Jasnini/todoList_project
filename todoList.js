@@ -5,7 +5,7 @@ let todoList=new Vue({
         things:[],//id content done
         button: 'all',
         i:0,
-        dis: true,
+        dis: 'hidden',
     },
     methods:{
         addThing(){
@@ -19,9 +19,9 @@ let todoList=new Vue({
             this.things=this.things.filter((el,index1,arr)=>{return el.id!==id1});
             let temp=this.things.filter(function(el,index1,arr){return el.done===1});
             if(temp.length!==0){
-                this.dis=false;
+                this.dis='visible';
             } else{
-                this.dis=true;
+                this.dis='hidden';
             }   
         },
         stateChange(item1){
@@ -38,18 +38,18 @@ let todoList=new Vue({
             }
             let temp=this.things.filter(function(el,index1,arr){return  el.done===1});
             if(temp.length!==0){
-                this.dis=false;
+                this.dis='visible';
             } else{
-                this.dis=true;
+                this.dis='hidden';
             }
         },
         clearDone(){
             this.things=this.things.filter(function(el){return el.done!==1});
             let temp=this.things.filter(function(el,index1,arr){return el.done===1});
             if(temp.length!==0){
-                this.dis=false;
+                this.dis='visible';
             } else{
-                this.dis=true;
+                this.dis='hidden';
             }
         },
         showWhat(buttonType){

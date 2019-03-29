@@ -41,7 +41,7 @@
                 <!-- <button id='all' v-on:click="showWhat('all')">All</button>
                 <button id='complete' v-on:click="showWhat('complete')">Done</button>
                 <button id='uncomplete' v-on:click="showWhat('uncomplete')">Undone</button> -->
-                <button id='dels' :disabled= "dis" v-on:click="clearDone()"> Clear Done </button>
+                <button id='dels' :style="{visibility: dis}" v-on:click="clearDone()"> Clear Done </button>
             </nav>
         </div>  
 
