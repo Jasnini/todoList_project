@@ -12,6 +12,7 @@
             <nav id='head'>
                 <input id='addbox' v-model='thing' v-on:keyup.enter='addThing()' placeholder="What you want to do?"/><button  id="addbutton" v-on:click="addThing()">AddThing</button>
             </nav>
+            <div id="mainout">
             <div id="main">
                 <componnet is='items-component' 
                         v-for="(item,index) in showThings"
@@ -21,12 +22,14 @@
                         :state=' item.done===0 ? false:true'
                         v-on:del-thing="deletThing(item.id)"
                         v-on:state-change="stateChange(item)"
-                        >
+                        @input="changeThing(item,$event)"                        >
                 </componnet>
             </div>
+            </div>
+            <div v-if=" things.length!==0 ">
             <nav id="bottom">
                 <!-- <div> -->
-                    <input name='listType' type='radio' checked id='all' v-on:click="showWhat('all')"/>
+                    <input name='listType' type='radio' checked id='all'  v-on:click="showWhat('all')"/>
                     <label for="all" >All</label>
                 <!-- </div> -->
                 <!-- <div> -->
@@ -43,6 +46,7 @@
                 <button id='uncomplete' v-on:click="showWhat('uncomplete')">Undone</button> -->
                 <button id='dels' :style="{visibility: dis}" v-on:click="clearDone()"> Clear Done </button>
             </nav>
+            </div>
         </div>  
 
         <script src="./todoList.js"></script>

@@ -1,6 +1,6 @@
 html{
     height:100%;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Helvetica;
 }
 body{
@@ -33,9 +33,14 @@ body{
    
 }
 
+#mainout{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 #main{
-    margin-left: 27.5%;
-    margin-right: 28%;
+    width: 37.4rem;
     /* padding-bottom: 0rem; */
     margin-bottom: 2rem;
     box-shadow: 0.5rem 0.5rem 2rem gray ;
@@ -69,7 +74,7 @@ body{
 }
 
 #addbutton:hover{
-    background-color: rgb(226,224, 224);
+    /* background-color: rgb(226,224, 224); */
     box-shadow: 0.2rem 0.2rem 0.2rem 0 rgba(114, 114, 114)
 }
 
@@ -80,16 +85,16 @@ body{
     /* border-left: 1px solid rgb(216, 214, 214);
     border-right: 1px solid rgb(216, 214, 214); */
     border-bottom: 1px solid rgb(216, 214, 214);
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-    height: 1.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    /* height: 1.8rem; */
 }
 /* #main #container:last-of-type{
     border-bottom:1px solid rgb(216, 214, 214);
 } */
 
 #check{
-    zoom: 160%;
+    zoom: 170%;
     /* margin-top: 0.5rem;  */
     margin-left: 1rem;
     /* float: left; */
@@ -97,27 +102,37 @@ body{
     /* left: 1 em; */
 }
 #item{
+    /* display: flex; */
+    position: relative;
+    display: inline-block;
     width: 100%;
     padding-right: 0.5rem;
     word-wrap:break-word;
     white-space: pre-wrap;
     
+    
 }
 #del{
     float: right;
-    font-size: 1.6rem;
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0rem;
+    /* flex: 1; */
+    display: none;
+    font-size: 1.5rem;
     background: transparent;
     border: none;
     color: rgb(194, 190, 190);
     /* margin-top: 0rem; 
     padding-top: 0rem; */
     /* padding-bottom: 0.5rem; */
-    visibility: hidden;
+    /* visibility: hidden; */
     outline: none;
 }
 
 #item:hover #del{
-    visibility: visible;
+    /* visibility: visible; */
+    display: inline;
 }
 #del:hover {
     color: rgb(122, 32, 103);
@@ -151,13 +166,21 @@ body{
 
  .complete{
      text-decoration-line: line-through;
+     -webkit-text-decoration-line: line-through;
      color: rgb(167, 162, 162);
      font-style: italic;
  }
  #itemin{
-     display: inline;
-     font-size: 1.5rem;
-     font-weight: 100;
+     /* flex: 20; */
+     /* user-modify: read-write-plaintext-only; */
+     display: inline-block;
+     width: 98%;
+     /* margin-right:1rem; */
+     padding-right: 0;
+     font-size: 1.3rem;
+     font-weight: 300;
+     font-family:  "Microsoft Yahei";
+     outline: none;
  }
 
  label{
