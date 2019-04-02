@@ -114,8 +114,8 @@ Vue.component('items-component',{
         },
         changeEdit(){
             this.editable=true;
-            this.$nextTick(()=>{this.$refs.content1.focus();});//nextTick()避免 元素还没有渲染完成进行focus操作会出错！！！
-            //this.focusState = true;
+            //this.$nextTick(()=>{this.$refs.content1.focus();});//nextTick()避免 元素还没有渲染完成进行focus操作会出错！！！
+            this.focusState = true;
             
         },
 
@@ -125,6 +125,9 @@ Vue.component('items-component',{
             update: function (el, {value}) {
                 if (value) {
                 el.focus()
+                var range = window.getSelection(); //创建range
+                range.selectAllChildren(el); //range 选择obj下所有子内容
+                range.collapseToEnd(); //光标移至最后
                 }
             },
         },
