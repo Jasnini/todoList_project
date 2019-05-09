@@ -22,7 +22,8 @@
                         :state=' item.done===0 ? false:true'
                         v-on:del-thing="deletThing(item.id)"
                         v-on:state-change="stateChange(item)"
-                        @input="changeThing(item,$event)"                        >
+                        @input="changeThing(item,$event)"                        
+                        >
                 </componnet>
             </div>
             </div>
